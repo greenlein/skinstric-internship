@@ -102,7 +102,7 @@ const CameraContent = () => {
           <ArrowLink label="" direction="left" color="white" destination="results" />
         </div>
 
-        <section className="absolute bottom-8 left-1/2 flex w-max max-w-[calc(100%-7rem)] -translate-x-1/2 flex-col items-center gap-4 text-center text-[10px] font-medium">
+        <section className="absolute bottom-8 left-1/2 flex w-max max-w-[calc(100%-7rem)] -translate-x-1/2 flex-col items-center gap-4 text-center text-[7px] md:text-[10px] font-medium">
           <p>TO GET BETTER RESULTS MAKE SURE TO HAVE</p>
           <ul className="flex flex-wrap items-center justify-center gap-x-7 gap-y-2">
             <li className="flex items-center gap-1.5">
@@ -122,7 +122,7 @@ const CameraContent = () => {
 
         {image && (
           <div className="absolute bottom-7 right-20 grid size-12 place-items-center">
-            <ArrowLink label="PROCEED" direction="right" color="white" onClick={handleProceed} />
+            <ArrowLink buttonSize="default" label="PROCEED" direction="right" color="white" onClick={handleProceed} />
           </div>
         )}
       </main>

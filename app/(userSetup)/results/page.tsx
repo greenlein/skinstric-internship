@@ -40,47 +40,51 @@ const ResultsContent = () => {
       <p className="absolute left-6 top-8 text-[12px] font-semibold tracking-[-0.03em]">TO START ANALYSIS</p>
       <div className="h-full w-full">
         {!isUploading ? (
-          <div className="flex h-full items-center justify-center gap-8 px-6 md:gap-24">
+          <div className="flex flex-col lg:flex-row h-full items-center justify-center lg:gap-8 px-6 md:gap-0">
             <div className="relative aspect-[2/1] w-full max-w-[560px] flex-1">
               <button
-                className="cursor-pointer hover:scale-105 active:scale-95 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-background z-1 rounded-full h-[125px] w-[125px] overflow-hidden"
+                className="cursor-pointer hover:scale-105 active:scale-95 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-background z-1 rounded-full h-[100px] w-[100px] lg:h-[125px] lg:w-[125px] overflow-hidden"
                 onClick={() => handleClick()}
               >
-                <img src="/assets/aperture.png" alt="" className="h-[125px] w-[125px]" />
+                <img src="/assets/aperture.png" alt="" className="h-[100px] w-[100px] lg:h-[125px] lg:w-[125px]" />
               </button>
 
-              <p className="absolute right-0 top-0">
+              <p className="absolute bottom-15 left-12 lg:bottom-auto lg:left-auto lg:right-0 lg:top-0">
                 ALLOW A.I. <br />
                 TO SCAN YOUR FACE
               </p>
 
-              <figure className="absolute right-[25%] top-0 scale-55 z-0">
+              <figure className="absolute right-[25%] top-0 scale-55 z-0 invisible lg:visible">
                 <img src="/assets/arrow.png" alt="" />
               </figure>
 
-              <RotatingSquares size={400} />
+              <RotatingSquares size={350} />
             </div>
 
             <div className="relative aspect-[2/1] w-full max-w-[560px] flex-1">
               <button
                 type="button"
-                className="cursor-pointer hover:scale-105 active:scale-95 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-background z-1 rounded-full h-[125px] w-[125px] overflow-hidden"
+                className="cursor-pointer hover:scale-105 active:scale-95 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-background z-1 rounded-full h-[100px] w-[100px] lg:h-[125px] lg:w-[125px] overflow-hidden"
                 onClick={() => inputRef.current?.click()}
                 disabled={isUploading}
               >
-                <img src="/assets/landscape.png" alt="" className="h-[125px] w-[125px] overflow-hidden" />
+                <img
+                  src="/assets/landscape.png"
+                  alt=""
+                  className="h-[100px] w-[100px] lg:h-[125px] lg:w-[125px] overflow-hidden"
+                />
               </button>
               <input ref={inputRef} type="file" accept="image/*" onChange={handleImageChange} className="sr-only" />
 
-              <p className="absolute bottom-0 left-0 text-end">
+              <p className="absolute top-15 right-12 lg:top-auto lg:right-auto lg:bottom-0 lg:left-0 text-end">
                 ALLOW A.I. <br />
                 ACCESS TO GALLERY
               </p>
 
-              <figure className="absolute bottom-0 left-[25%] scale-59 rotate-180">
+              <figure className="absolute bottom-0 left-[25%] scale-59 rotate-180 invisible lg:visible">
                 <img src="/assets/arrow.png" alt="" />
               </figure>
-              <RotatingSquares size={400} />
+              <RotatingSquares size={350} />
             </div>
           </div>
         ) : (

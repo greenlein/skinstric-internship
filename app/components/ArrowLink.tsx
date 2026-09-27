@@ -11,6 +11,8 @@ type ArrowLinkProps = {
   navigationDelay?: number;
   disabled?: boolean;
   showBox?: boolean;
+  bold?: boolean;
+  buttonSize?: "small" | "default";
   onClick?: () => void;
   onMouseEnter?: () => void;
   onMouseLeave?: () => void;
@@ -39,6 +41,8 @@ export const ArrowLink = ({
   direction,
   color = "black",
   showBox = false,
+  bold = false,
+  buttonSize = "default",
   destination,
   navigationDelay = 0,
   disabled = false,
@@ -69,12 +73,16 @@ export const ArrowLink = ({
             window.setTimeout(() => router.push(`/${destination}`), navigationDelay);
           }
         }}
-        className={`group flex items-center gap-4 text-[10px] font-medium ${
-          color === "white" ? "text-white" : "text-text"
-        } ${direction === "right" ? "flex-row-reverse" : ""} ${disabled ? "cursor-not-allowed" : ""}`}
+        className={`group flex items-center gap-4 text-[10px] ${
+          bold ? "font-bold" : "font-medium"
+        } ${color === "white" ? "text-white" : "text-text"} ${
+          direction === "right" ? "flex-row-reverse" : ""
+        } ${disabled ? "cursor-not-allowed" : ""}`}
       >
         <span
-          className={`grid h-9 w-9 rotate-45 place-items-center border transition-colors ${
+          className={`grid ${
+            buttonSize === "small" ? "h-6 w-6" : "h-9 w-9"
+          } rotate-45 place-items-center border transition-colors ${
             color === "white"
               ? `border-white ${disabled ? "" : "group-hover:bg-white/20"}`
               : `border-text ${disabled ? "" : "group-hover:bg-[#f1f1f1]"}`

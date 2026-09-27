@@ -78,7 +78,7 @@ export default function IntroductionPage() {
               aria-describedby={error ? "input-error" : undefined}
               aria-invalid={Boolean(error)}
               placeholder={currentPrompt.placeholder}
-              className="w-[356px] border-0 border-b border-[#555] bg-transparent px-0 pb-1 text-center text-[39px] font-light tracking-[-0.07em] outline-none placeholder:text-[#202124] focus:border-[#202124]"
+              className="w-[225px] md:w-[356px] border-0 border-b border-[#555] bg-transparent px-0 pb-1 text-center text-[25px] md:text-[39px] font-light tracking-[-0.07em] outline-none placeholder:text-[#202124] focus:border-[#202124]"
             />
             {error && (
               <p id="input-error" role="alert" className="mt-2 text-[12px] text-red-600">

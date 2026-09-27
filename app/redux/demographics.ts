@@ -69,6 +69,7 @@ export const demographicSlice = createSlice({
       state.age = sortByHighestValue(data.age);
       state.gender = sortByHighestValue(data.gender);
     },
+    hydrateDemographic: (_state, action: PayloadAction<DemographicData>) => action.payload,
     resetDemographic: (state) => {
       state.race = sortByHighestValue({ ...state.race });
       state.age = sortByHighestValue({ ...state.age });

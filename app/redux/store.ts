@@ -10,7 +10,7 @@ const preserveSavedOrder = <T extends Record<string, number>>(saved: Partial<T> 
   return Object.fromEntries([...orderedEntries, ...missingEntries]) as T;
 };
 
-const loadDemographics = () => {
+export const loadDemographics = () => {
   if (typeof window === "undefined") {
     return defaultDemographics;
   }
@@ -39,7 +39,7 @@ export const store = configureStore({
     demographics: demographicsReducer,
   },
   preloadedState: {
-    demographics: loadDemographics(),
+    demographics: defaultDemographics,
   },
 });
 
